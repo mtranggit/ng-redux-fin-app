@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'mt-currencies',
+  selector: 'currencies',
   templateUrl: './currencies.component.html',
   styleUrls: ['./currencies.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,4 +1,4 @@
-import '@ngrx/store/add/operator/select';
+import '@ngrx/core/add/operator/select';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/let';
 import { Observable } from 'rxjs/Observable';
@@ -6,7 +6,7 @@ import * as operations from '../actions/operations';
 import { Operation } from '../models/operation.model';
 
 /**
- * From a simple array ([]), the state becomes an object where the 
+ * From a simple array ([]), the state becomes an object where the
  * array is contained within the entities property
  */
 export interface State {

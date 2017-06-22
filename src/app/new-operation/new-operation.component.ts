@@ -8,7 +8,8 @@ import { Operation } from '../common/models/operation.model';
 
 @Component({
     selector: 'new-operation',
-    templateUrl: './new-operation.template.html',
+    templateUrl: './new-operation.component.html',
+    styleUrls: ['./new-operation.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NewOperationComponent {
@@ -17,5 +18,10 @@ export class NewOperationComponent {
     public operation: Operation;
     constructor() {
         this.operation = new Operation();
+    }
+
+    public onAddOperation(operation: Operation) {
+        console.log(operation);
+        this.addOperation.emit(operation);
     }
 }
