@@ -1,4 +1,15 @@
 import { Component } from '@angular/core';
+import { State, Store } from '@ngrx/store';
+import * from operations from './common/actions/operations';
+import * from currencies from './common/actions/currencies';
+import { Operation } from './common/models/operation.model';
+
+/**
+ * In order to access the application state, reference the reducers folder again,
+ * accessing all the exported members through index.ts
+ */
+import * as fromRoot from './common/reducers';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'mt-root',
@@ -7,4 +18,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mt';
+  public id = 0; //simulate IDs
+  public operations: Observable<Operation[]>
+  public currencies: Observable<string[]>;
+  public selectedCurrency: Observable<string>;
+
+  constructor(private _store: Store<fromRoot.State>) {
+    this.operations = this._store.let(fromRoot.getEntities);
+    this.currencies = this._store.let(fromRoot.getCurrencyEntities);
+    this.selectedCurrency = this._store.let(fromRoot.getSelectedCurrency);
+    this._store.dispatch(new currencies.LoadCurrencyRateAction(''));
+  }
 }
