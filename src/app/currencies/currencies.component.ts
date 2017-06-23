@@ -17,4 +17,10 @@ export class CurrenciesComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelectionChange(currency: string) {
+    console.log('onSelectionChange', currency);
+    this.selectedCurrency = currency;
+    this.currencySelected.emit(currency);
+  }
+
 }

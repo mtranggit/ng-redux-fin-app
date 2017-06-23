@@ -4,22 +4,26 @@ import 'rxjs/add/operator/let';
 import { Observable } from 'rxjs/Observable';
 import * as currencies from '../actions/currencies';
 
+
+
 export interface State {
     entities: Array<string>;
     selectedCurrency: string | null;
     rates: string;
     loadingRates: boolean;
-}
+};
 
 const initialState: State = {
-    entities: ['GBP', 'EUR', 'AUD'],
+    entities: ['GBP', 'EUR', 'JPY', 'RUB', 'NZD'],
     selectedCurrency: null,
     rates: '',
     loadingRates: false
 };
 
+
 export function reducer(state = initialState, action: currencies.Actions): State {
-    switch(action.type) {
+    switch (action.type) {
+
         case currencies.ActionTypes.LOAD_CURRENCY_RATES: {
             return {
                 entities: state.entities,
@@ -47,11 +51,14 @@ export function reducer(state = initialState, action: currencies.Actions): State
         default:
             return state;
     }
+
 }
+
 
 export function getCurrenciesEntities(state$: Observable<State>) {
     return state$.select(s => s.entities);
 }
+
 
 export function getSelectedCurrency(state$: Observable<State>) {
     return state$.select(s => s.selectedCurrency);

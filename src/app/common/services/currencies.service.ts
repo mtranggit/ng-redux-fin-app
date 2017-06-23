@@ -7,7 +7,7 @@ export class CurrencyService {
 
     loadCurrencies() {
         // Inferring the base is AUD
-        return this.http.get('http://api.fixer.io/lastest?base=AUD')
+        return this.http.get('http://api.fixer.io/latest?base=AUD')
             .map( (res) => res.json())
             .map( (body) => body['rates'])
     }

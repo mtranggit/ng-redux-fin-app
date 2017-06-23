@@ -1,5 +1,11 @@
-<div [ngModel]="selectedCurrency" (ngModelChange)="currencySelected.emit($event)" ngbRadioGroup name="radioBasic">
+<!--<div [ngModel]="selectedCurrency" (ngModelChange)="currencySelected.emit($event)" ngbRadioGroup name="radioBasic">
   <label *ngFor="let currency of currencies" class="btn btn-primary">
-    <input type="radio" [value]="currency"> {{ currency }}
+    <input type="radio" name="currency" [value]="currency"> {{ currency }}
   </label>
-</div>
+</div>-->
+
+  <label *ngFor="let currency of currencies" class="btn btn-primary">
+    <input type="radio" name="currency" [value]="currency"  (change)="onSelectionChange(currency)"> {{ currency }}
+  </label>
+
+<!--{{ selectedCurrency | json }}-->
