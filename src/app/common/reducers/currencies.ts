@@ -9,14 +9,14 @@ import * as currencies from '../actions/currencies';
 export interface State {
     entities: Array<string>;
     selectedCurrency: string | null;
-    rates: string;
+    rates: any;
     loadingRates: boolean;
 };
 
 const initialState: State = {
     entities: ['GBP', 'EUR', 'JPY', 'RUB', 'NZD'],
     selectedCurrency: null,
-    rates: '',
+    rates: {},
     loadingRates: false
 };
 

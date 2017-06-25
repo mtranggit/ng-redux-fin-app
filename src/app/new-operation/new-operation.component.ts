@@ -16,12 +16,9 @@ export class NewOperationComponent {
     @Output() addOperation = new EventEmitter();
 
     public operation: Operation;
+
     constructor() {
         this.operation = new Operation();
     }
 
-    public onAddOperation(operation: Operation) {
-        console.log(operation);
-        this.addOperation.emit(operation);
-    }
 }

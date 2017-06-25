@@ -22,14 +22,13 @@ export class CustomCurrencyPipe implements PipeTransform {
    * by simply implementing a selector and calling it where needed.
    * */
   constructor(private _store: Store<fromRoot.State>, private _currencyService: CurrencyService) {
-    // this._store.let(fromRoot.getCurrencyRates)
-    //   .subscribe((rates) => {
-    //     // fx.rates = rates;
-    //     this.rates = rates
-    //   });
-    this._currencyService.loadCurrencies().subscribe((rates) => {
-      fx.rates = rates
-    });
+    this._store.let(fromRoot.getCurrencyRates)
+      .subscribe((rates) => {
+        fx.rates = rates;
+      });
+    // this._currencyService.loadCurrencies().subscribe((rates) => {
+    //   fx.rates = rates
+    // });
   }
 
   /** The currency parameter obtains its value from the selectedCurrency property.

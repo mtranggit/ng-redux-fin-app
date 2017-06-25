@@ -1,5 +1,5 @@
 export class Operation {
-  id: number;
+  id    : number;
   amount: number;
   reason: string;
 

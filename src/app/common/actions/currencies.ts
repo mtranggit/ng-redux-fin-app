@@ -12,11 +12,11 @@ export class ChangeCurrencyAction implements Action {
 }
 export class LoadCurrencyRatesAction implements Action {
     type = ActionTypes.LOAD_CURRENCY_RATES;
-    constructor(public payload: string) { }
+    constructor(public payload: any) { }
 }
 export class LoadRatesCompleteAction implements Action {
-    type = ActionTypes.CHANGE_CURRENCY;
-    constructor(public payload: string) { }
+    type = ActionTypes.LOAD_RATES_COMPLETE;
+    constructor(public payload: any) { }
 }
 
 export type Actions =

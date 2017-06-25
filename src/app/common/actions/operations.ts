@@ -10,9 +10,9 @@ export const ActionTypes = {
 
 /**
  * Action Class
-* Because the Meta Reducer dispatches actions to their 
-* respective reducers, we define custom actions and create actions as new class instances 
-* when dispatching using the @ngrx/store's Action class. Expressing actions as classes also 
+* Because the Meta Reducer dispatches actions to their
+* respective reducers, we define custom actions and create actions as new class instances
+* when dispatching using the @ngrx/store's Action class. Expressing actions as classes also
 * enables type checking in reducer functions.
 Read more at https://www.pluralsight.com/guides/front-end-javascript/building-a-redux-application-with-angular-2-part-2#AqQlPkM0ex0gsQRy.99
  */

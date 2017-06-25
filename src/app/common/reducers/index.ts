@@ -5,7 +5,7 @@ import { combineLatest } from 'rxjs/observable/combineLatest';
 
 import { Operation } from '../models/operation.model';
 /**
- * Import each module of you state. This way, you can access its reducer
+ * Import each module of your state. This way, you can access its reducer
  * function and state interface as a property.
  */
 import * as fromOperations from '../reducers/operations';
